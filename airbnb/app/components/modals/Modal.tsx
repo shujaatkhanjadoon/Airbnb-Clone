@@ -155,7 +155,7 @@ const Modal: React.FC<ModalProbs> = ({
                            <div className="
                            flex flex-row w-full gap-4 items-center
                            ">
-                            <Button label='My Button'/>
+                            <Button label='My Button' />
                            </div>
                         </div>
                     </div>
