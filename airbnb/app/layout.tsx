@@ -10,6 +10,7 @@ import ToasterProvider from './providers/ToasterProvider';
 
 import './globals.css'
 import ClientOnly from './components/ClientOnly';
+import getCurrentUser from './actions/getCurrentUser';
 
 
 const font = Nunito({
@@ -21,13 +22,12 @@ export const Metadata = {
   description: 'Clone By Shujaat Khan',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-
-  // const currentUser = await getCurrentUser();
+  const currentUser = await getCurrentUser();
 
   return (
     <html lang="en">
@@ -38,8 +38,8 @@ export default function RootLayout({
           <RegisterModal />
           <SearchModal />
           <RentModal />
-          {/* <Navbar currentUser={currentUser} /> */}
-          <Navbar />
+          <Navbar currentUser={currentUser} />
+          {/* <Navbar /> */}
         </ClientOnly>
         <div className="pb-20 pt-28">
           {children}
